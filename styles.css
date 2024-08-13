@@ -97,3 +97,26 @@ footer p {
     font-weight: bold;
     margin-top: 20px;
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.navbar-dark-mode {
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #ffffff;
+}
+
+.card.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #444444;
+}
+
+footer.dark-mode {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+

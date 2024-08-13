@@ -45,3 +45,17 @@ fetch("https://valorant-api.com/v1/buddies")
         displayBuddies(buddies);
     })
     .catch(error => console.error('Error fetching data:', error));
+
+    document.getElementById('darkModeToggle').addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        document.querySelector('header').classList.toggle('navbar-dark-mode');
+        document.querySelector('footer').classList.toggle('dark-mode');
+    
+        // Alternar clases para las tarjetas
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => card.classList.toggle('dark-mode'));
+    
+        // Cambiar el texto del botón según el estado
+        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+    });
+    
