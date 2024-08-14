@@ -4,11 +4,14 @@ fetch("https://valorant-api.com/v1/buddies")
         const buddies = data.data;
         const container = document.getElementById('main-content');
         const searchInput = document.getElementById('searchInput');
+        const viewFavoritesButton = document.getElementById('view-favorites');
+        let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+        let isViewingFavorites = false;
 
         function displayBuddies(filteredBuddies) {
             container.innerHTML = ''; // Limpia el contenedor antes de añadir nuevos elementos
             const cardCount = document.getElementById('card-count');
-            
+
             if (filteredBuddies.length === 0) {
                 const noResultsMessage = document.createElement('div');
                 noResultsMessage.className = 'no-results';
@@ -17,6 +20,7 @@ fetch("https://valorant-api.com/v1/buddies")
                 cardCount.innerText = 'Total de tarjetas: 0';
             } else {
                 filteredBuddies.forEach(buddy => {
+                    const isFavorite = favorites.includes(buddy.uuid);
                     const card = document.createElement('div');
                     card.className = 'col';
                     card.innerHTML = `
@@ -24,38 +28,76 @@ fetch("https://valorant-api.com/v1/buddies")
                             <img src="${buddy.displayIcon}" class="card-img-top" alt="${buddy.displayName}" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">${buddy.displayName}</h5>
+                                <button class="btn btn-outline-warning btn-favorite" data-id="${buddy.uuid}">
+                                    <i class="fas fa-star${isFavorite ? '' : '-o'}"></i> Favorito
+                                </button>
                             </div>
                         </div>
+
                     `;
                     container.appendChild(card);
                 });
                 cardCount.innerText = `Total de tarjetas: ${filteredBuddies.length}`;
             }
+
+            // Añade event listener para los botones de favorito
+            document.querySelectorAll('.btn-favorite').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const buddyId = e.currentTarget.getAttribute('data-id');
+                    const starIcon = e.currentTarget.querySelector('i');
+                    const isFavorite = favorites.includes(buddyId);
+
+                    if (isFavorite) {
+                        // Eliminar de favoritos
+                        const index = favorites.indexOf(buddyId);
+                        if (index > -1) {
+                            favorites.splice(index, 1);
+                        }
+                        starIcon.classList.remove('fa-star');
+                        starIcon.classList.add('fa-star-o');
+                    } else {
+                        // Añadir a favoritos
+                        favorites.push(buddyId);
+                        starIcon.classList.remove('fa-star-o');
+                        starIcon.classList.add('fa-star');
+                    }
+
+                    // Guardar favoritos en el localStorage
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                });
+            });
         }
 
-        searchInput.addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
+        function filterFavorites() {
+            const favoriteBuddies = buddies.filter(buddy => favorites.includes(buddy.uuid));
+            displayBuddies(favoriteBuddies);
+        }
+
+        function filterAllBuddies() {
+            const searchTerm = searchInput.value.toLowerCase();
             const filteredBuddies = buddies.filter(buddy => 
                 buddy.displayName.toLowerCase().includes(searchTerm)
             );
             displayBuddies(filteredBuddies);
+        }
+
+        searchInput.addEventListener('input', () => {
+            if (!isViewingFavorites) {
+                filterAllBuddies();
+            }
         });
 
-        // Display all buddies initially
-        displayBuddies(buddies);
-    })
-    .catch(error => console.error('Error fetching data:', error));
+        viewFavoritesButton.addEventListener('click', () => {
+            isViewingFavorites = !isViewingFavorites;
+            if (isViewingFavorites) {
+                viewFavoritesButton.innerText = 'Ver Todos';
+                filterFavorites();
+            } else {
+                viewFavoritesButton.innerText = 'Ver Favoritos';
+                filterAllBuddies();
+            }
+        });
 
-    document.getElementById('darkModeToggle').addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        document.querySelector('header').classList.toggle('navbar-dark-mode');
-        document.querySelector('footer').classList.toggle('dark-mode');
-    
-        // Alternar clases para las tarjetas
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => card.classList.toggle('dark-mode'));
-    
-        // Cambiar el texto del botón según el estado
-        this.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Oscuro';
+        // Muestra todos los buddies inicialmente cuando se carga la página
+        filterAllBuddies();
     });
-    
