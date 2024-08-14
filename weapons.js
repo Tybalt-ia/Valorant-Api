@@ -28,7 +28,7 @@ function renderWeaponCards(weapons) {
 
 function createWeaponCard(weapon) {
     const card = document.createElement('div');
-    card.classList.add('col-md-3', 'col-sm-1', 'mb-4');
+    card.classList.add('mb-4'); // Elimina las clases col-md-3 y col-sm-1
 
     const cardInner = document.createElement('div');
     cardInner.classList.add('card', 'h-100');
@@ -80,11 +80,35 @@ function filterWeapons(weapons) {
         return textMatch && categoryMatch;
     });
 
+    const noResultsMessage = document.getElementById('no-results-message');
+
     if (filteredWeapons.length > 0) {
-        document.getElementById('no-results-message').style.display = 'none'; // Ocultar mensaje
+        // Ocultar el mensaje de no resultados si hay armas coincidentes
+        if (noResultsMessage) {
+            noResultsMessage.style.display = 'none';
+        }
         renderWeaponCards(filteredWeapons);
     } else {
-        document.getElementById('no-results-message').style.display = 'block'; // Mostrar mensaje
         document.getElementById('weapon-cards').innerHTML = ''; // Limpiar las tarjetas de armas
+
+        // Crear el mensaje de no resultados si no existe ya
+        if (!noResultsMessage) {
+            const noResultsMessageElement = document.createElement('div');
+            noResultsMessageElement.id = 'no-results-message';
+            noResultsMessageElement.className = 'text-center';
+            noResultsMessageElement.innerHTML = `
+                <h3>No hay armas que coincidan con tu búsqueda.</h3>
+                <p>Revisa la ortografía de la palabra.</p>
+                <p>Utiliza palabras más genéricas o menos palabras.</p>
+                <p>Navega por las categorías para encontrar un arma similar.</p>
+            `;
+            document.getElementById('weapon-cards').parentElement.appendChild(noResultsMessageElement);
+        } else {
+            noResultsMessage.style.display = 'block';
+        }
     }
 }
+
+
+
+

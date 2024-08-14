@@ -15,7 +15,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="img/logovaloran.jpeg" alt="Valorant Logo" height="30">
+                    <img src="./img/logo3.png" alt="Valorant Logo" height="30">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,8 @@
                             <a class="nav-link" href="#">Agents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Buddies</li>
+                            <a class="nav-link" href="./Buddies.html">Buddies</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Maps</a>
                         </li>
@@ -43,6 +44,13 @@
         </nav>
     </header>
     <main>
+        <div class="video-background">
+            <video autoplay muted loop id="background-video">
+                <source src="/img/Valorant_20s.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
         <div class="weaponCard">
             <h1 class="text-center my-4 text-white">Valorant Weapons</h1>
 
@@ -57,15 +65,9 @@
                     </select>
                 </div>
             </div>
-            <!-- Mensaje de no resultados -->
-            <div id="no-results-message" class="text-center">
-                <h3>No hay armas que coincidan con tu búsqueda.</h3>
-                <p>Revisa la ortografía de la palabra.</p>
-                <p>Utiliza palabras más genéricas o menos palabras.</p>
-                <p>Navega por las categorías para encontrar un arma similar.</p>
-            </div>
+        
             <!-- Contenedor de las tarjetas de armas -->
-            <div id="weapon-cards" class="row"></div>
+            <div id="weapon-cards"></div>
         </div>
     </main>
     <footer>
