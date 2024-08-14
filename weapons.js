@@ -80,7 +80,7 @@ function filterWeapons(weapons) {
         return textMatch && categoryMatch;
     });
 
-    const noResultsMessage = document.getElementById('no-results-message');
+    const noResultsMessage = document.getElementById('no-results-message-weapons');
 
     if (filteredWeapons.length > 0) {
         // Ocultar el mensaje de no resultados si hay armas coincidentes
@@ -94,13 +94,13 @@ function filterWeapons(weapons) {
         // Crear el mensaje de no resultados si no existe ya
         if (!noResultsMessage) {
             const noResultsMessageElement = document.createElement('div');
-            noResultsMessageElement.id = 'no-results-message';
-            noResultsMessageElement.className = 'text-center';
+            noResultsMessageElement.id = 'no-results-message-weapons';
+            noResultsMessageElement.className = 'text-center text-white pt-4';
             noResultsMessageElement.innerHTML = `
                 <h3>No hay armas que coincidan con tu búsqueda.</h3>
-                <p>Revisa la ortografía de la palabra.</p>
-                <p>Utiliza palabras más genéricas o menos palabras.</p>
-                <p>Navega por las categorías para encontrar un arma similar.</p>
+                <p class="mb-0">Revisa la ortografía de la palabra.</p>
+                <p class="mb-0">Utiliza palabras más genéricas o menos palabras.</p>
+                <p class="mb-0">Navega por las categorías para encontrar un arma similar.</p>
             `;
             document.getElementById('weapon-cards').parentElement.appendChild(noResultsMessageElement);
         } else {
