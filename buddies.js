@@ -33,7 +33,6 @@ fetch("https://valorant-api.com/v1/buddies")
                                 </button>
                             </div>
                         </div>
-
                     `;
                     container.appendChild(card);
                 });
@@ -68,36 +67,27 @@ fetch("https://valorant-api.com/v1/buddies")
             });
         }
 
-        function filterFavorites() {
-            const favoriteBuddies = buddies.filter(buddy => favorites.includes(buddy.uuid));
-            displayBuddies(favoriteBuddies);
-        }
-
-        function filterAllBuddies() {
+        function filterBuddies() {
             const searchTerm = searchInput.value.toLowerCase();
-            const filteredBuddies = buddies.filter(buddy => 
-                buddy.displayName.toLowerCase().includes(searchTerm)
-            );
+            const filteredBuddies = (isViewingFavorites 
+                ? buddies.filter(buddy => favorites.includes(buddy.uuid)) 
+                : buddies
+            ).filter(buddy => buddy.displayName.toLowerCase().includes(searchTerm));
             displayBuddies(filteredBuddies);
         }
 
-        searchInput.addEventListener('input', () => {
-            if (!isViewingFavorites) {
-                filterAllBuddies();
-            }
-        });
+        searchInput.addEventListener('input', filterBuddies);
 
         viewFavoritesButton.addEventListener('click', () => {
             isViewingFavorites = !isViewingFavorites;
             if (isViewingFavorites) {
                 viewFavoritesButton.innerText = 'Ver Todos';
-                filterFavorites();
             } else {
                 viewFavoritesButton.innerText = 'Ver Favoritos';
-                filterAllBuddies();
             }
+            filterBuddies(); // Aplicar el filtro cuando se cambia el estado de favoritos
         });
 
         // Muestra todos los buddies inicialmente cuando se carga la página
-        filterAllBuddies();
+        filterBuddies();
     });
