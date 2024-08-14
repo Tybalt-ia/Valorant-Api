@@ -8,95 +8,175 @@
     <link href="https://fonts.cdnfonts.com/css/valorant" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/cd-fedra-cond-pro-book" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="https://freelogopng.com/images/all_img/1664302686valorant-icon-png.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/022/636/388/large_2x/valorant-logo-valorant-icon-transparent-free-png.png">
     <title>Home</title>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark pt-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://freelogopng.com/images/all_img/1664302589valorant-logo-png-white.png" alt="Valorant Logo" height="30">
-            </a>
-         
-        </div>
-    </nav>
-    <main>
-        <div id="contenedorHome" class="container d-flex flex-row ">
-            <div class="container2 col-sm-3 m-1 align-self-center">
-                <h2>A 5v5 character-based tactical shooter</h2>
-                <p>Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and defend your side using sharp gunplay and tactical abilities. And, with one life per-round, you'll need to think faster than your opponent if you want to survive. Take on foes across Competitive and Unranked modes as well as Deathmatch and Spike Rush.</p>
     
+</head>
+<body class="bodyHome">
+    <header class="headerHome">
+        <div class="video-background">
+            <video autoplay muted loop id="background-video">
+                <source src="./img/Valorant_20s.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    
+        <nav class="navbar navbar-dark align-self-start mx-5 pt-4">
+            <div class="container d-flex  mx-5">
+                <a class="navbar-brand mx-5 navHome" href="#">
+                    <div class=""> 
+                        <img src="https://freelogopng.com/images/all_img/1664302589valorant-logo-png-white.png" alt="Valorant Logo" height="30">
+    
+                    </div>
+                </a>
+             
             </div>
-            <div class="swiper col-5 d-flex">
-                <div class="swiper-wrapper">
-                    <div id="card1" ondblclick="window.location.href ='./Agents.html';" class="swiper-slide">
-                        <p class="titulo">Agents</p>
-                        <div class="card_info"> 
-                            <div class="content"> 
-                                <h3 >Creativity is your greatest weapon: </h3> 
-                                <p> More than guns and bullets, you'll choose an Agent armed with adaptive, swift, and lethal abilities that create opportunities to let your gunplay shine. No two Agents play alike, just as no two highlight reels will look the same.</p>
+        </nav>
+
+    </header>
+    <main class="mainHome">
+        <div id="contenedorHome" class="container d-flex mt-5">
+            <div class="container2Home col-sm-3 m-1 align-self-center col-sm-2">
+                <div>
+                    <h2>A 5v5 character-based tactical shooter</h2>
+                    <p>Blend your style and experience on a global, competitive stage. You have 13 rounds to attack and defend your side using sharp gunplay and tactical abilities. And, with one life per-round, you'll need to think faster than your opponent if you want to survive. Take on foes across Competitive and Unranked modes as well as Deathmatch and Spike Rush.</p>
+                </div>
+                <div class="download pt-4">
+                    <h1>Download it now!</h1>
+                    <div class="container d-flex justify-content-around">
+                        <a class="navbar-brand" href="https://playvalorant.com/en-us/download">
+                            <img src="./img/gaming-pc_colores.png" alt="PC Logo" height="30">
+                        </a>
+                        <a class="navbar-brand" href="https://www.xbox.com/en-US/games/store/valorant/9N1NLJK9SKRN">
+                            <img src="./img/xbox.png" alt="xbox Logo" height="30">
+                        </a>
+                        <a class="navbar-brand" href="https://store.playstation.com/en-us/concept/10010048/">
+                            <img src="./img/PS.png" alt="PS Logo" height="30">
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="container" >
+                <div class="swiper   " >
+                    <div class="swiper-wrapper" >
+                        <div id="card1" ondblclick="window.location.href ='./agents.html';" class="swiper-slide" >
+                            <p class="titulo">Agents</p>
+                            <div class="card_info"> 
+                                <div class="content"> 
+                                    <h3 >Creativity is your greatest weapon: </h3> 
+                                    <p> More than guns and bullets, you'll choose an Agent armed with adaptive, swift, and lethal abilities that create opportunities to let your gunplay shine. No two Agents play alike, just as no two highlight reels will look the same.</p>
+                                </div> 
+                                <div id="clickAgents"  class="action btnHome">  
+                                    <a href="./agents.html" class="btn">Double click to see all the agents </a> 
+                                </div>
+                                <div class="action">  
+                                    <a id="swipeAgents" href="./agents.html" class=" btn nav-link">Swipe down to see all the agents </a> 
+                                </div>
                             </div> 
-                            <div class="action">  
-                                <a href="./Agents.html" class="btn">Double click to see all the agents </a> 
+                          </div>
+                        <div id="card2" ondblclick="window.location.href ='./buddies.html';"   class="swiper-slide">
+                            <p class="titulo">Buddies</p>
+                            <div class="card_info"> 
+                                <div class="content"> 
+                                    <h3 >Don't forget to put your style: </h3> 
+                                    <p > Gunbuddy's are cosmetics that hang off the side of a weapon. They can be purchased through the in-game store, earned through contracts or earned as part of the Act's battle pass.</p>
+                                </div> 
+                                <div id="clickBuddies" class="action">  
+                                    <a href="./buddies.html" class="btn">Double click to see all the buddies </a> 
+                                </div>
+                                <div id="swipeBuddies" class="action">  
+                                    <a href="./buddies.html" class="btn">Swipe down to to see all the buddies </a> 
+                                </div>
                             </div>
-                        </div> 
-                      </div>
-                    <div id="card2" ondblclick="window.location.href ='./Buddies.html';" class="swiper-slide">
-                        <p class="titulo">Buddies</p>
-                        <div class="card_info"> 
-                            <div class="content"> 
-                                <h3 >Don't forget to put your style: </h3> 
-                                <p > Gunbuddy's are cosmetics that hang off the side of a weapon. They can be purchased through the in-game store, earned through contracts or earned as part of the Act's battle pass.</p>
-                            </div> 
-                            <div class="action">  
-                                <a href="./Buddies.html" class="btn">Double click to see all the buddies </a> 
+                        </div>
+                        <div id="card3" ondblclick="window.location.href ='./maps.html';" class="swiper-slide">
+                            <p  class="titulo">Maps</p>
+                            <div class="card_info"> 
+                                <div class="content"> 
+                                    <h3 >Fight around the world: </h3> 
+                                    <p > Each map is a playground to showcase your creative thinking. Purpose-built for team strategies, spectacular plays, and clutch moments. Make the play others will imitate for years to come..</p>
+                                </div> 
+                                <div id="clickMaps" class="action">  
+                                    <a href="./maps.html" class="btn">Double click to see all the maps </a> 
+                                </div>
+                                <div id="swipeMaps" class="action">  
+                                    <a id="linkMaps" href="./maps.html" class=" btn nav-link">Swipe down to see all the maps </a> 
+                                </div>
+                            </div>
+                        </div>
+                        <div id="card4" ondblclick="window.location.href ='./weapons.html';" class="swiper-slide">
+                            <p class="titulo">Weapons</p>
+                            <div class="card_info"> 
+                                <div class="content"> 
+                                    <h3 >You can't win without one of this: </h3> 
+                                    <p > With so many weapons to choose from it's definitely a good idea to know how much each weapon costs and what their characteristics are before heading into battle.</p>
+                                </div> 
+                                <div id="clickWeapons" class="action">  
+                                    <a href="./weapons.html" class="btn nav-link ">Double click to see all the weapons </a> 
+                                </div>
+                                <div id="swipeWeapons" class="action">  
+                                    <a id="linkWeapons" href="./weapons.html" class=" btn nav-link">Swipe down to see all the weapons </a> 
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="card3" ondblclick="window.location.href ='./Maps.html';" class="swiper-slide">
-                        <p  class="titulo">Maps</p>
-                        <div class="card_info"> 
-                            <div class="content"> 
-                                <h3 >Fight around the world: </h3> 
-                                <p > Each map is a playground to showcase your creative thinking. Purpose-built for team strategies, spectacular plays, and clutch moments. Make the play others will imitate for years to come..</p>
-                            </div> 
-                            <div class="action">  
-                                <a  href="./Maps.html" class="btn">Double click to see all the maps </a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div id="card4" ondblclick="window.location.href ='./Weapons.html';" class="swiper-slide">
-                        <p class="titulo">Weapons</p>
-                        <div class="card_info"> 
-                            <div class="content"> 
-                                <h3 >You can't win without one of this: </h3> 
-                                <p > With so many weapons to choose from it's definitely a good idea to know how much each weapon costs and what their characteristics are before heading into battle.</p>
-                            </div> 
-                            <div class="action">  
-                                <a href="./Weapons.html" class="btn nav-link">Double click to see all the weapons </a> 
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
+                    <div class="swiper-pagination"></div> 
+            
                 </div>
                 
-                
-                <div class="swiper-pagination"></div> 
-        
             </div>
 
         </div>
         
-    
-
-
+        
+        
     </main>
+    
+    <footer id="footerHome">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!-- Logo -->
+                <div class="col-md-2 d-flex justify-content-center justify-content-md-start mt-0 p-0 mb-md-0">
+                    <img src="./img/logoFooter.png" alt="Valorant Logo" height="50">
+                    <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/riotbar/7e684cc4765a7d059f9018e16717472d7082dc37-65x97.png?&h=100&fit=max" alt="clasificacion logo" >
+                    
+                </div>
+                <!-- Text -->
+                <div class="col-md-8 d-flex flex-column justify-content-center text-center">
+                    <p class="mb-0">© Copyright Valorant-API. All Rights Reserved</p>
+                    <div id="derechos">
+                        <p class="mb-0">Valorant-API is a non-official API and not endorsed by Riot Games in any way.</p>
+                        <p class="mb-0">Riot Games, Valorant, and all associated properties are trademarks or registered
+                            trademarks of Riot Games, Inc.</p>
 
-
+                    </div>
+                </div>
+                <!-- Social Icons -->
+                <div class="col-md-2 d-flex justify-content-center justify-content-md-end">
+                    <a href="https://www.facebook.com/PlayVALORANT/" class="text-white me-2" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/PlayVALORANT/" class="text-white me-2" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=YOUR_PHONE_NUMBER" class="text-white" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./home.js" type="module"> </script>
+    <script src="./swiped-events.js"></script>
    
 </body>
 </html>

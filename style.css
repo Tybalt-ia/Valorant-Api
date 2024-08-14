@@ -1,4 +1,8 @@
-
+/*               */
+/*               */
+/* comienza Home */
+/*               */
+/*               */
 @import url('https://fonts.cdnfonts.com/css/valorant');
 @import url('https://fonts.cdnfonts.com/css/cd-fedra-cond-pro-book');
 *{
@@ -7,7 +11,7 @@
   box-sizing: border-box;
 }
 
-body {
+.bodyHome{
   position: relative;
   font-family: Arial, sans-serif;
   display: flex;
@@ -15,12 +19,28 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: scroll;
   background-image: radial-gradient(
     circle at top left,
     #950923 10%,
     #111113 30%
   );
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#background-video {
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
 }
 
 .navbar-brand img {
@@ -32,56 +52,95 @@ body {
     font-weight: bold;
 }
 
-footer {
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    margin-top: auto;
-    background-color: #000;
+
+#footerHome {
+  width: 100%;
+  height: 15vh;
+  bottom: 0;
+  margin-top: auto;
+  color: #fff;
+  text-align: center;
+  font-family: 'CD Fedra Cond Pro Book', sans-serif;
+  background-color: rgba(0, 0, 0, 0.8);
+  
 }
 
-footer img {
-    height: 30px;
+
+#footerHome img {
+  height: 50px;
+  margin-right: 20px;
+  width: auto;
 }
+
 
 footer a {
-    font-size: 1.2rem;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  
 }
 
-footer a:hover {
-  color:#ddd;
+footer .fa-2x {
+  font-size: 2em;
 }
 
 
+footer p {
+  font-size: 1rem;
+  margin: 0;
+}
 
-.container2 h2{
+#clasificacion p{
+  font-size: 0.8rem;
+  margin: 0
+}
+
+.container2Home{
+  width: 40%;
+  height: 60vh;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.container2Home h2{
   color: red;
   font-family: 'VALORANT', sans-serif;
 }
+.container2Home h1{
+  color: white;
+  text-shadow: 2px 2px 2px #950923;
+  font-family: 'VALORANT', sans-serif;
+  text-align: center;
+}
 
-.container2 p{
+.class .navbar-brand img{
+  background-color: white;
+}
+
+.container2Home p{
   color: #ddd;
   font-family: 'CD Fedra Cond Pro Book', sans-serif;
   font-size: larger;
 }
 
 .swiper {
-  width: 100%;
-  padding: 50px 0;
+  width: 600px;
+  height: 450px;
+  padding: 2px 0;
 }
 
 .swiper-slide {
   position: relative;
-  width: 200px;
-  height: 500px;
+  width: 190px;
+  height: 400px;
   border-radius: 12px;
   overflow: hidden;
   transition: 1s;
   user-select: none;
   background-position: center; 
   background-size: cover;
-  transition: 5s;
+  transition: 6s;
 }
 #card2{
   background-position: center; 
@@ -153,10 +212,11 @@ footer a:hover {
   display: block;
   margin: auto; 
   padding: 20px;
+  color: #000000;
+  font-family: 'CD Fedra Cond Pro Book', sans-serif;
   background-color: #ffffff8c;
   font-size: 1.5;
   font-weight: 700;
-  text-shadow: 1px 1px 2px #ffff;
   box-shadow: 0 5px 10px #000;
   transition-duration: 3s;
   
@@ -166,14 +226,13 @@ footer a:hover {
 
 }
 
-.swiper-slide-active:hover .card_info .action .btn { 
+.swiper-slide-active:hover .card_info .action  .btn { 
   position: absolute; 
   padding: 10px; 
   color: #FFf; 
   left: 60px;
   width: 60%; 
   bottom: 4px;
-  text-shadow: 0px 0px 0px #ffff;
   text-decoration: none; 
   text-align: center; 
   background: #621721; 
@@ -204,4 +263,192 @@ footer a:hover {
   background-color: #6f1223;
   border-radius: 14px;
 }
+#swipeAgents{
+  display: none;
+}
+#swipeBuddies{
+  display: none;
+}
+#swipeMaps{
+  display: none;
+}
+#swipeWeapons{
+  display: none;
+}
 
+
+
+
+@media ( max-width: 767px) {
+  .headerHome{
+    height: 10vh;
+    width: 100vw;
+  }
+  .mainHome{
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column-reverse;
+    overflow: scroll;
+  }
+  
+  .navHome img {
+    height: 40px;
+}
+
+.bodyHome{
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle at top left,
+    #950923 10%,
+    #111113 30%
+  );
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#background-video {
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+#contenedorHome{
+      display: flex;
+      flex-direction: column-reverse;
+      height: 100vh;
+      margin-top: 0;
+      overflow: scroll;
+      
+  }
+
+ 
+  .container2Home{
+    width: 90%;
+    margin:0%;
+    
+  }
+  .swiper {
+    display: flex;
+    width: 90vw;
+    height: 50vh;
+    margin-top: 0%;
+
+  }
+  
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    width: 80vw;
+    border-radius: 12px;
+    overflow: hidden;
+    user-select: none;
+    background-position: center; 
+    background-size: cover;
+    transition: 5s;
+  }
+  /* slide activa */
+
+
+
+.swiper-slide-active {
+  position: relative;
+  width: 70vw;
+  height: 48vh;
+  transition-duration: 1s;
+}
+
+.swiper-slide-active:hover .card_info{
+  position: absolute; 
+  width: 80%; 
+  height: 39vh; 
+  left: 0; 
+  bottom: 0;
+  right: 0; 
+  top: 0; 
+  display: block;
+  margin: auto; 
+  padding: 20px;
+  color: #000000;
+  font-family: 'CD Fedra Cond Pro Book', sans-serif;
+  background-color: #ffffff8c;
+  font-size: 0.8rem;
+  font-weight: 500; 
+  box-shadow: 0 5px 10px #000;
+  transition-duration: 3s;
+  
+}
+
+.swiper-slide-active:hover .card_info .content { margin-top: 0px;
+
+}
+
+.swiper-slide-active:hover .card_info .action  .btn { 
+  position: absolute; 
+  padding: 1px; 
+  color: #FFf; 
+  left: 40px;
+  width: 60%; 
+  bottom: 4px;
+  text-decoration: none; 
+  text-align: center; 
+  background: #621721; 
+  display: block; 
+
+}
+.footerHome img {
+  display: none;
+}
+
+
+#derechos{
+  display: none;
+}
+
+#clickAgents{
+  display: none;
+}
+#clickBuddies{
+  display: none;
+}
+#clickMaps{
+  display: none;
+}
+#clickWeapons{
+  display: none;
+}
+
+#swipeAgents{
+  display: block;
+}
+#swipeBuddies{
+  display: block;
+}
+#swipeMaps{
+  display: block;
+}
+#swipeWeapons{
+  display: block;
+}
+
+
+}
+
+
+/*               */
+/*               */
+/* termina Home  */
+/*               */
+/*               */
