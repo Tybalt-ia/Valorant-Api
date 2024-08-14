@@ -126,6 +126,6 @@ footer p {
     object-fit: cover;
 }
 
-.btn-favorite {
-    margin-top: auto;
+#view-favorites {
+    margin-right: 10px;
 }
