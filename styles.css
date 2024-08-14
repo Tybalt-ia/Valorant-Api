@@ -587,6 +587,7 @@ footer p {
 
 #view-favorites {
   margin-right: 10px;
+
 }
 
 
@@ -791,3 +792,5 @@ footer a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+
