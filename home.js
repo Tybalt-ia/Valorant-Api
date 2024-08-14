@@ -30,9 +30,7 @@ function imagen(){
   it++;
   if(it >= arregloMapas.length){
     it = 0;
-  }
-  console.log(it)
-   
+  }   
 }
 
 setInterval(imagen, 3000);
@@ -57,6 +55,7 @@ let swiper = new Swiper(".swiper", {
    on: {
      click(event) {
        swiper.slideTo(this.clickedIndex);
+       
      },
    },
  });
@@ -66,3 +65,28 @@ let swiper = new Swiper(".swiper", {
   window.location.href = url;
   
 }
+
+
+let btnAgents = document.getElementById("card1")
+let btnBuddies = document.getElementById("card2")
+let btnMapas = document.getElementById('card3')
+let btnWeapons = document.getElementById("card4")
+
+
+
+btnAgents.addEventListener('swiped-down', function(e) {
+  console.log('se supone bajo agents')
+  window.location.href ='./agents.html';
+});
+btnBuddies.addEventListener('swiped-down', function(e) {
+  console.log('se supone bajo buddies')
+  window.location.href ='./buddies.html';
+});
+btnMapas.addEventListener('swiped-down', function(e) {
+  console.log('se supone bajo mapas')
+  window.location.href ='./maps.html';
+});
+btnWeapons.addEventListener('swiped-down', function(e) {
+  console.log('se supone bajo weapons')
+  window.location.href ='./weapons.html';
+});
