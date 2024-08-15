@@ -49,6 +49,10 @@ html,
     padding: 0;
 }
 
+#contenedor-agentes{
+    height: 342px;
+}
+
 .swiper {
     /* background-color: #fffefe; */
     padding: 0px 0 50px 0;
