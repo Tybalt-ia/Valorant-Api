@@ -97,7 +97,7 @@ function filterWeapons(weapons) {
             noResultsMessageElement.id = 'no-results-message-weapons';
             noResultsMessageElement.className = 'text-center text-white pt-4';
             noResultsMessageElement.innerHTML = `
-                <h3>No hay armas que coincidan con tu búsqueda.</h3>
+                <h3>There are no weapons that match your quest.</h3>
                 <img src="./img/logoMensajeNoResultado.jpg" alt="Valorant Logo">
             `;
             document.getElementById('weapon-cards').parentElement.appendChild(noResultsMessageElement);
