@@ -20,6 +20,7 @@ header {
     width: 100%;
     z-index: -1;
     overflow: hidden;
+    
 }
 
 #background-video {
@@ -33,7 +34,7 @@ header {
 html,
 .bodyAgentes {
     position: relative;
-    height: 100%;
+    
 }
 
 .bodyAgentes {
@@ -143,4 +144,7 @@ footer {
     margin-top: auto;
     margin: 0%;
     background-color: rgba(0, 0, 0, 0.6);
+}
+.textoDetalles{
+    width : 50%;
 }
