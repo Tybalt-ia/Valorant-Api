@@ -98,9 +98,7 @@ function filterWeapons(weapons) {
             noResultsMessageElement.className = 'text-center text-white pt-4';
             noResultsMessageElement.innerHTML = `
                 <h3>No hay armas que coincidan con tu búsqueda.</h3>
-                <p class="mb-0">Revisa la ortografía de la palabra.</p>
-                <p class="mb-0">Utiliza palabras más genéricas o menos palabras.</p>
-                <p class="mb-0">Navega por las categorías para encontrar un arma similar.</p>
+                <img src="./img/logoMensajeNoResultado.jpg" alt="Valorant Logo">
             `;
             document.getElementById('weapon-cards').parentElement.appendChild(noResultsMessageElement);
         } else {
