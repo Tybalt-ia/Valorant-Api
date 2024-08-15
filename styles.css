@@ -970,6 +970,7 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.6);
   height: 47vh;
@@ -985,6 +986,11 @@ footer p {
 
 #no-results-message:not(.hidden) {
   animation: fadeIn 0.5s ease-in-out;
+}
+.imgNoResults{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.5rem;
 }
 
 @keyframes fadeIn {
