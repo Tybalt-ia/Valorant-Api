@@ -679,14 +679,6 @@ font-weight: bold;
 margin-top: 20px;
 }
 
-.no-resultsFav {
-  text-align: center;
-  margin-left: 35%; 
-  color: rgb(231, 214, 63);
-  font-size: 25px;
-  
-}
-
 
 .video-background {
 position: fixed;
@@ -1191,11 +1183,20 @@ to {
 }
 }
 
-/* estilos modal */
-
 .thumbnail {
   width: 70px;
   height: 40px;
+}
+
+
+/* estilos modal */
+
+.no-resultsFav {
+  text-align: center;
+  margin-left: 35%; 
+  color: rgb(231, 214, 63);
+  font-size: 25px;
+  
 }
 
 .modal-content {
