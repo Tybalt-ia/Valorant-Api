@@ -6,6 +6,10 @@ let maps = await fetch("https://valorant-api.com/v1/maps");
 let datosMaps = await maps.json();
 let weapons = await fetch("https://valorant-api.com/v1/weapons");
 let datosWeapons = await weapons.json();
+let dataAgentes = datosAgentes.data
+let dataBuddies = datosBuddies.data
+let dataMaps = datosMaps.data
+let dataWeapons = datosWeapons.data
 let arregloBuddies = datosBuddies.data.map(d => d.displayIcon)
 arregloBuddies = arregloBuddies.filter(d => d!=null)
 let arregloAgentes = datosAgentes.data.map(d => d.fullPortrait)
@@ -15,6 +19,10 @@ arregloMap =  [... new Set (arregloMap.sort())]
 let arregloMapas = arregloMap.filter(d => d!=null)
 let arregloWeapon = datosWeapons.data.map(d => d.shopData)
 let arregloWeapons =[]
+console.log(datosAgentes.data)
+console.log(datosBuddies.data)
+console.log(datosMaps.data)
+console.log(datosWeapons.data)
 for (let i = 0;i<arregloWeapon.length-1;i++){
   arregloWeapons[i] = arregloWeapon[i].newImage;
 }
@@ -27,6 +35,7 @@ function imagen(){
   document.getElementById('card2').style.backgroundImage = `url(${arregloBuddies[it]})`
   document.getElementById('card3').style.backgroundImage = `url(${arregloMapas[it]})`
   document.getElementById('card4').style.backgroundImage = `url(${arregloWeapons[it]})`
+  document.getElementById('card5').style.backgroundImage = `url(${arregloAgentes[it+18]})`
   it++;
   if(it >= arregloMapas.length){
     it = 0;
@@ -60,33 +69,27 @@ let swiper = new Swiper(".swiper", {
    },
  });
 
- document.querySelectorAll('card3').onclick = function() {
-  var url = document.getElementById('linkMapas').href;
-  window.location.href = url;
-  
-}
-
 
 let btnAgents = document.getElementById("card1")
 let btnBuddies = document.getElementById("card2")
 let btnMapas = document.getElementById('card3')
 let btnWeapons = document.getElementById("card4")
+let btnStats = document.getElementById("card5")
 
 
 
 btnAgents.addEventListener('swiped-down', function(e) {
-  console.log('se supone bajo agents')
   window.location.href ='./agents.html';
 });
 btnBuddies.addEventListener('swiped-down', function(e) {
-  console.log('se supone bajo buddies')
   window.location.href ='./buddies.html';
 });
 btnMapas.addEventListener('swiped-down', function(e) {
-  console.log('se supone bajo mapas')
   window.location.href ='./maps.html';
 });
 btnWeapons.addEventListener('swiped-down', function(e) {
-  console.log('se supone bajo weapons')
   window.location.href ='./weapons.html';
+});
+btnStats.addEventListener('swiped-down', function(e) {
+  window.location.href ='./stats.html';
 });
