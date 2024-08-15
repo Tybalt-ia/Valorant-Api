@@ -1,3 +1,19 @@
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  #background-video {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+  }
+
 /* AGENTES */
 
 html,body{
@@ -6,7 +22,7 @@ html,body{
 }
 
 body{
-    background-color: #2832b4;
+   
     font-family: Helvetica Neue, Helvetica;
     font-size: 14px;
     color: #000;
@@ -15,15 +31,15 @@ body{
 }
 
 .swiper{
-    
+    /* background-color: #fffefe; */
     padding: 0px 0 50px 0;
 }
 
 .swiper-slide{
     width: 300px !important;
     height: 530px;
-    background-color: #32323200;
-    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    background-color: #ffffff46;
+    box-shadow: 0 0 30px rgb(255, 255, 255);
     padding: 35px;
    
     text-align: center;
@@ -44,13 +60,13 @@ body{
     margin: 5px;
     text-align: center;
     font-size: 25px;
-    color: #db1818;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
 }
 .text i {
     font-size: 23px;
-    color: #db1818;
+    color: #ffffff;
 }
 
 .text p{
@@ -66,9 +82,33 @@ body{
 .myBtn{
    display: inline-block; 
    padding: 13px  40px;
-   border: 3px solid #f81010;
+   border: 3px solid #ffffff;
    border-radius: 25px;
-   color: #f81010;
+   color: #ffffff;
    text-decoration: none;
    margin-top: 20px;
 }
+.Personaje{
+    background-color: #ffffff73 !important;
+}
+
+.card-img{
+    object-fit: cover;
+    height: 580px;
+}
+
+@media (min-width: 1024px){
+    .card-img{
+        object-fit: cover;
+        height: 580px;         
+    }
+}
+@media (max-width: 2560px){
+    .card-img{
+        object-fit: cover;
+        width: 900px  ; 
+        height: 580px;         
+    }
+    
+}
+

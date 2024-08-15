@@ -3,8 +3,9 @@ export async function consultaUrl(url) {
   return await fetch(url).then((res) => res.json());
 }
 
+let swiper = null;
 export function initSwiper(clase) {
-  return new Swiper(clase, {
+  swiper = new Swiper(clase, {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: false,
@@ -18,6 +19,7 @@ export function initSwiper(clase) {
       stretch: 0,
     }
   });
+  return swiper;
 }
 
 export function pintarEnContenedorXId(contenedorId, data) {
@@ -32,6 +34,8 @@ export function limpiarContenedorXId(contenedorId) {
 
 // AGENTES
 export function formatoTarjetaAgentes(arreglo) {
+  let favoritos = localStorage.getItem("favoritos") || "[]"
+  favoritos = JSON.parse(favoritos)
   return arreglo.map((elemento) => {
     if (elemento.fullPortrait) {
       return `
@@ -39,7 +43,7 @@ export function formatoTarjetaAgentes(arreglo) {
                 <div class="content">
                     <div class="text">
                       <div> 
-                       <i class="fa-regular fa-heart"></i>
+                       <i class="fa-${favoritos.includes(elemento.uuid) ? "solid" : "regular"} fa-heart" onclick="guardarFavorito('${elemento.uuid}')"></i>
                        <h3 >${elemento.displayName}</h3>
                       </div>                        
                         <p>${elemento.description}</p>
@@ -49,7 +53,7 @@ export function formatoTarjetaAgentes(arreglo) {
                         <div class="swiper-lazy-preloader"></div>
                     </div>
                 </div>
-                <a href="/agentes/detalles.html?id=${elemento.uuid}" class="myBtn">Detalles</a>
+                <a href="/detalles.html?id=${elemento.uuid}" class="myBtn">Detalles</a>
             </div>
        `;
     }
@@ -76,28 +80,18 @@ export function formatoDetallesAgentes(arreglo) {
   });
 }
 
-
-
-
-
-export function pintarCheckbox(events) {let checkbox = []
-
-  for (let i = 0; i < events.length; i++) {
-    if (!checkbox.includes(events[i].category)) {
-      checkbox.push(events[i].category)
-    }
-  }
-
-  for (let i = 0; i < checkbox.length; i++) {
-    let contenedor = document.getElementById("checkbox")
-    let check = document.createElement('div')
-    check.className = "form-check m-1 d-flex align-items-center"
-    check.innerHTML = `
-      <input class="form-check-input" type="checkbox" value="${checkbox[i]}" id="flexCheck1">
-      <label class="form-check-label" for="flexCheck1">
-         ${checkbox[i]}
-      </label>
-    `
-    contenedor.appendChild(check)
+export function guardarFavorito(id) {
+  let favoritos = localStorage.getItem("favoritos") || "[]"
+  favoritos = JSON.parse(favoritos)
+  favoritos.push(id)
+  localStorage.setItem("favoritos", JSON.stringify(favoritos))
+  let agentes = localStorage.getItem("agentes") || "[]";
+  agentes = JSON.parse(agentes)
+  if (agentes.length > 0) {
+    let tarjetasAgentes = formatoTarjetaAgentes(agentes);
+    pintarEnContenedorXId("contenedor-agentes", tarjetasAgentes.join(''));
+    swiper.initialSlide = Math.round(agentes.length / 2)
+    swiper.update();
   }
 }
+

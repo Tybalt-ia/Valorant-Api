@@ -24,7 +24,13 @@
 
   
   <body>
-    <div class="checkbox"></div>
+    <div class="video-background">
+      <video autoplay muted loop id="background-video">
+          <source src="./acets/WhatsApp Video 2024-08-13 at 6.55.47 PM.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+    <div id="checkbox" class="checkbox"></div>
     <div class="swiper mySwiper">
         <div id="contenedor-agentes" class="swiper-wrapper">
         </div>
@@ -33,7 +39,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./agentes.js" type="module"></script>
-    <script src="../funciones/funciones.js" type="module"></script>
+    <script src="./funciones/funciones.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
