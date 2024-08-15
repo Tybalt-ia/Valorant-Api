@@ -873,6 +873,11 @@ footer p {
   color: #ffffff;
 }
 
+#mainMaps{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .map-container {
   width: 32vw;
@@ -950,7 +955,7 @@ footer p {
 }
 
 #no-results-message {
-  color: #000000;
+  color: #fff;
   height: 47vh;
   font-size: 1.2em;
   text-align: center;
