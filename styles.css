@@ -464,7 +464,7 @@
 
 
 
-body {
+.bodyBuddies {
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -472,7 +472,7 @@ body {
   margin: 0;
 }
 
-header {
+.headerBuddies {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -492,7 +492,7 @@ header {
   margin-right: 10px;
 }
 
-main {
+.mainBuddies {
   flex: 1; 
 }
 
@@ -569,7 +569,7 @@ main {
 /*empieza weapons*/
 /*               */
 /*               */
-body {
+.bodyWeapons {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
@@ -612,7 +612,7 @@ body {
     font-weight: bold;
 }
 
-main {
+.mainWeapons {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -685,7 +685,6 @@ footer a:hover {
 #no-results-message-weapons{
   width: 50vw;
   height: 20vh;
-
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -952,7 +951,7 @@ footer p {
 #no-results-message {
   color: #000000;
   height: 47vh;
-  font-size: 1.2em;
+  font-size: 40px;
   text-align: center;
   margin-top: 20px;
   font-family: 'Arial', sans-serif;
