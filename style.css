@@ -1,5 +1,8 @@
-header {
+.header {
     background-color: rgba(0, 0, 0, 0.6);
+}
+#headerAgentes{
+    background-color: rgba(0, 0, 0, 0.6);   
 }
 
 .navbar-brand img {
@@ -32,12 +35,12 @@ header {
 /* AGENTES */
 
 html,
-.bodyAgentes {
+#bodyAgentes {
     position: relative;
     
 }
 
-.bodyAgentes {
+#bodyAgentes {
 
     font-family: 'VALORANT', sans-serif;
     font-size: 14px;
@@ -58,6 +61,7 @@ html,
     box-shadow: 0 0 30px rgb(255, 255, 255);
     padding: 20px;
     text-align: center;
+    
 }
 
 .content {

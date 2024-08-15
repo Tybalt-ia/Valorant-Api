@@ -491,7 +491,7 @@ export function formatoTarjetaAgentes(arreglo) {
   return arreglo.map((elemento) => {
     if (elemento.fullPortrait) {
       return `
-        <div class="swiper-slide">
+        <div class="swiper-slide id="swiper-slide-tarjeta"">
                 <div class="content">
                     <div class="text">
                       <div >
@@ -502,7 +502,7 @@ export function formatoTarjetaAgentes(arreglo) {
                     </div>
                     <div class="image">
                         <img src="${elemento.fullPortrait}" alt="${elemento.displayName}" loading="lazy">
-                        <div class="swiper-lazy-preloader"></div>
+                        <div class="swiper-lazy-preloader" ></div>
                     </div>
                 </div>
                 <a href="/detalles.html?id=${elemento.uuid}" class="myBtn">Detalles</a>
@@ -553,10 +553,13 @@ export function favoritosAgentesEvent(){
           agente.favorito = favoritos.includes(agente.uuid);
           return agente
         })
-        
-        let tarjetasAgentes = formatoTarjetaAgentes(agentes);
+        let agentesFilter = agentes;
+        if (isViewingFavorites) {
+            agentesFilter = agentes.filter(agente => agente.favorito)
+        } 
+        let tarjetasAgentes = formatoTarjetaAgentes(agentesFilter);
         pintarEnContenedorXId("contenedor-agentes", tarjetasAgentes.join(''));
-        swiper.initialSlide = Math.round(agentes.length / 2)
+        swiper.initialSlide = Math.round(agentesFilter.length / 2)
         swiper.update();
         favoritosAgentesEvent();
     });
@@ -566,7 +569,6 @@ export function favoritosAgentesEvent(){
 export function filtrarFavoritos(){
   const viewFavoritesButton = document.getElementById('view-favorites');
   viewFavoritesButton.addEventListener('click', () => {
-    console.log(1)
     isViewingFavorites = !isViewingFavorites; 
     let agentesFilter = agentes;
     if (isViewingFavorites) {
