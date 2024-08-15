@@ -403,7 +403,7 @@
   display: block; 
 
 }
-.footerHome img {
+#footerHome img {
   display: none;
 }
 #footerHome {
@@ -1066,4 +1066,16 @@ footer p {
       width: 70px;
       height: 40px;
   }
+}
+
+
+/* Stats */
+
+table{
+  font-family: 'CD Fedra Cond Pro Book', sans-serif !important;
+}
+tbody td{
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: #fff !important;
+  text-align: center;
 }
