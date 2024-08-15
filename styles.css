@@ -278,6 +278,9 @@
 #swipeWeapons{
   display: none;
 }
+#swipeStats{
+  display: none;
+}
 
 
 
@@ -437,6 +440,9 @@
 #clickWeapons{
   display: none;
 }
+#clickStats{
+  display: none;
+}
 
 #swipeAgents{
   display: block;
@@ -448,6 +454,9 @@
   display: block;
 }
 #swipeWeapons{
+  display: block;
+}
+#swipeStats{
   display: block;
 }
 
