@@ -278,6 +278,9 @@
 #swipeWeapons{
   display: none;
 }
+#swipeStats{
+  display: none;
+}
 
 
 
@@ -437,6 +440,9 @@
 #clickWeapons{
   display: none;
 }
+#clickStats{
+  display: none;
+}
 
 #swipeAgents{
   display: block;
@@ -448,6 +454,9 @@
   display: block;
 }
 #swipeWeapons{
+  display: block;
+}
+#swipeStats{
   display: block;
 }
 
@@ -685,8 +694,11 @@ footer a:hover {
 #no-results-message-weapons{
   width: 50vw;
   height: 20vh;
-
   background-color: rgba(0, 0, 0, 0.6);
+}
+#no-results-message-weapons img{
+  height: 5rem;
+  border-radius: 1.5rem;
 }
 
 #weaponsCard .card-img-top {
